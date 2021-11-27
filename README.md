@@ -106,5 +106,10 @@ Untuk melakukan testing, kita bisa mencoba melakukan ping antar node, berikut me
 
 
 ### **a. Subnetting**
+Pembagian subnet di CIDR dimulai dari yang terjauh dari cloud untuk mempermudah routing sehingga didapatkan subnet sebagai berikut : 
+
+![CIDR](./images/CIDR.png)
+
+
 ### **b. Routing**
 ### **c. Testing**
