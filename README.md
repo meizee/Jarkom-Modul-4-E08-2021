@@ -115,5 +115,314 @@ Dan didapat tree dari subnet VLSM seperti berikut :
 ![testing_3](https://github.com/meizee/Jarkom-Modul-4-E08-2021/blob/e8e48f2e9315d3e76296f6d9b145ecf94cda65db/images/Tree%20VLSM.jpeg)
 
 
+![CIDR1](./images/CIDR1.JPG)
+
+
+Berikut dibuat topologi pada gns3 serta konfigurasi setiap node yang ada :
+
+![CIDR2](./images/CIDR2.JPG)
+
+Jipangu :
+```
+auto eth0
+iface eth0 inet static
+	address 10.33.8.2
+	netmask 255.255.248.0
+	gateway 10.33.8.1
+```
+
+Pucci :
+```
+auto eth0
+iface eth0 inet static
+	address 10.33.16.1
+	netmask 255.255.255.252
+  
+auto eth1
+iface eth1 inet static
+	address 10.33.8.1
+	netmask 255.255.248.0
+  
+auto eth2
+iface eth2 inet static
+	address 10.33.0.1
+	netmask 255.255.248.0
+```
+
+Calmbelt :
+```
+auto eth0
+iface eth0 inet static
+	address 10.33.0.2
+	netmask 255.255.248.0
+	gateway 10.33.0.1
+```
+
+Courtyard :
+```
+auto eth0
+iface eth0 inet static
+	address 10.33.0.3
+	netmask 255.255.248.0
+	gateway 10.33.0.1
+```
+
+Water7 :
+```
+auto eth0
+iface eth0 inet static
+	address 10.33.128.2
+	netmask 255.255.255.252
+  
+auto eth1
+iface eth1 inet static
+	address 10.33.32.1
+	netmask 255.255.252.0
+  
+auto eth2
+iface eth2 inet static
+	address 10.33.16.2
+	netmask 255.255.255.252
+  
+```
+
+Cipher :
+```
+auto eth0
+iface eth0 inet static
+	address 10.33.32.2
+	netmask 255.255.252.0
+```
+
+Foosha :
+```
+auto eth1
+iface eth1 inet static
+	address 10.33.128.1
+	netmask 255.255.252.0
+  
+auto eth2
+iface eth2 inet static
+	address 10.33.128.1
+	netmask 255.255.255.252
+  
+auto eth3
+iface eth3 inet static
+	address 10.34.64.1
+	netmask 255.255.252.0
+  
+auto eth4
+iface eth4 inet static
+	address 10.34.16.1
+	netmask 255.255.252.0
+```
+
+Blueno :
+```
+auto eth0
+iface eth0 inet static
+	address 10.33.128.2
+	netmask 255.255.252.0
+	gateway 10.34.128.1
+```
+
+Doriki :
+```
+auto eth0
+iface eth0 inet static
+	address 10.34.64.2
+	netmask 255.255.252.0
+	gateway 10.34.64.1
+```
+
+Guanhao :
+```
+auto eth0
+iface eth0 inet static
+	address 10.34.16.2
+	netmask 255.255.252.0
+  
+auto eth1
+iface eth1 inet static
+	address 10.34.36.1
+	netmask 255.255.252.0
+  
+auto eth2
+iface eth2 inet static
+	address 10.34.32.1
+	netmask 255.255.254.0
+  
+auto eth3
+iface eth3 inet static
+	address 10.34.16.1
+	netmask 255.255.252.0
+```
+
+Jabra :
+```
+auto eth0
+iface eth0 inet static
+	address 10.34.36.2
+	netmask 255.255.252.0
+	gateway 10.34.36.1
+```
+
+Maingate :
+```
+auto eth0
+iface eth0 inet static
+	address 10.34.32.2
+	netmask 255.255.254.0
+	gateway 10.34.32.1
+```
+
+Alabasta :
+```
+auto eth0
+iface eth0 inet static
+	address 10.34.32.3
+	netmask 255.255.254.0
+  
+auto eth1
+iface eth1 inet static
+	address 10.34.34.1
+	netmask 255.255.255.240
+```
+
+Jorge :
+```
+auto eth0
+iface eth0 inet static
+	address 10.34.34.2
+	netmask 255.255.255.240
+	gateway 10.34.34.1
+```
+
+Oimo :
+```
+auto eth0
+iface eth0 inet static
+	address 10.34.16.2
+	netmask 255.255.252.0
+```
+
+EniesLobby :
+```
+auto eth0
+iface eth0 inet static
+	address 10.34.4.2
+	netmask 255.255.255.0
+	gateway 10.34.4.1
+```
+
+Seastone :
+```
+auto eth0
+iface eth0 inet static
+	address 10.34.4.3
+	netmask 255.255.255.0
+  
+auto eth1
+iface eth1 inet static
+	address 10.34.0.1
+	netmask 255.255.252.0
+```
+
+Elena :
+```
+auto eth0
+iface eth0 inet static
+	address 10.34.0.2
+	netmask 255.255.252.0
+	gateway 10.34.0.1
+```
+
+Fukurou :
+```
+auto eth0
+iface eth0 inet static
+	address 10.34.8.2
+	netmask 255.255.255.240
+	gateway 10.34.8.1
+```
+
 ### **b. Routing**
+Untuk melakukan routing digunakan command `route add -net <NID> netmask <Netmask> gw <gateway>`. Routing ini dilakukan pada setiap router yang ada
+
+Pucci :
+```
+##default routing ke water7
+route add -net 0.0.0.0 netmask 0.0.0.0 gw 10.33.16.2
+```
+
+Water7 :
+```
+##default routing ke foosha
+route add -net 0.0.0.0 netmask 0.0.0.0 gw 10.33.64.1
+##Jipangu
+route add -net 10.33.16.0 netmask 255.255.248.0 gw 10.33.16.1
+##courtyard n calmbelt
+route add -net 10.33.0.0 netmask 255.255.248.0 gw 10.33.16.1
+```
+
+Foosha :
+```
+#FOOSHA kiri
+##Cipher
+route add -net 10.33.32.0 netmask 255.255.252.0 gw 10.33.64.2
+##jipangu
+route add -net 10.33.8.0 netmask 255.255.248.0 gw 10.33.64.2
+##calmbelt n courtyard
+route add -net 10.33.0.0 netmask 255.255.248.0 gw 10.33.64.2
+
+#FOOSHA bawah
+##mengarah ke maingate
+route add -net 10.34.32.0 netmask 255.255.254.0 gw 10.34.16.2
+##mengarah ke jabra
+route add -net 10.34.36.0 netmask 255.255.252.0 gw 10.34.16.2
+##mengarah ke jorge
+route add -net 10.34.34.0 netmask 255.255.255.240 gw 10.34.16.2
+##mengarah ke enieslobby
+route add -net 10.34.4.0 netmask 255.255.255.0 gw 10.34.16.2
+##elena
+route add -net 10.34.0.0 netmask 255.255.252.0 gw 10.34.16.2
+##fukurou
+route add -net 10.34.8.0 netmask 255.255.255.240 gw 10.34.16.2
+```
+
+Guanhao :
+```
+##default rooting ke foosha 
+route add -net 0.0.0.0 netmask 0.0.0.0 gw 10.34.16.1
+##jorge
+route add -net 10.34.34.0 netmask 255.255.255.240 gw 10.34.32.3
+##enieslobby
+route add -net 10.34.4.0 netmask 255.255.255.0 gw 10.34.16.2
+##elena
+route add -net 10.34.0.0 netmask 255.255.252.0 gw 10.34.16.2
+##fukurou
+route add -net 10.34.8.0 netmask 255.255.255.240 gw 10.34.16.2
+```
+
+Alabasta :
+```
+##default routing ke Guanhao
+route add -net 0.0.0.0 netmask 0.0.0.0 gw 10.34.32.1
+
+```
+
+Oimo :
+```
+##default routing ke Guanhao
+route add -net 0.0.0.0 netmask 0.0.0.0 gw 10.34.16.1
+##elena
+route add -net 10.34.0.0 netmask 255.255.252.0 gw 10.34.4.3
+```
+
+Seastone :
+```
+##default routing ke oimo
+route add -net 0.0.0.0 netmask 0.0.0.0 gw 10.34.4.1
+```
+
 ### **c. Testing**
