@@ -110,6 +110,10 @@ Pembagian subnet di CIDR dimulai dari yang terjauh dari cloud untuk mempermudah 
 
 ![CIDR](./images/CIDR.png)
 
+Dan didapat tree dari subnet VLSM seperti berikut : 
+
+![testing_3](https://github.com/meizee/Jarkom-Modul-4-E08-2021/blob/e8e48f2e9315d3e76296f6d9b145ecf94cda65db/images/Tree%20VLSM.jpeg)
+
 
 ### **b. Routing**
 ### **c. Testing**
