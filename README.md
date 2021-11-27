@@ -425,3 +425,7 @@ route add -net 0.0.0.0 netmask 0.0.0.0 gw 10.34.4.1
 ```
 
 ### **c. Testing**
+
+### **d. Kendala**
+Pada metode CIDR menggunakan GNS3 ditemukan kendala pada proses routing sehingga tidak bisa melakukan ping kemanapun, kemungkinan besar kesalahan terjadi pada proses pembuatan tree dan IP 
+
